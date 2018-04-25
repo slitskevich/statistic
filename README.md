@@ -7,7 +7,7 @@ Build and run using gradle (https://gradle.org):
   - init gradle by running `[ROOT_FOLDER]/gradle wrapper`
   - build with `[ROOT_FOLDER]/gradlew build`;
   - find statistic.war file in `[ROOT_FOLDER]/build/libs` folder
-  - deploy war file to servlet container, e.g. Tomcat
+  - deploy war file to servlet container, e.g. Tomcat, runnint at `[HOST]` with `[PORT]`
   - access API at:
     - `GET ~ http://[HOST]:[PORT]/statistic/api/statistics` 
     - `POST ~ http://[HOST]:[PORT]/statistic/api/transactions`
