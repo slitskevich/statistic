@@ -15,5 +15,12 @@ Build and run using gradle (https://gradle.org):
 <b>CONSTANT TIME SOLUTION</b>
 
 Constant run time and memory usage solution is achieved by storing aggregated statistic for every of past 60 seconds.
-Storage content is updated whenever next valid transaction is logged. 
-Transactions with timestamp in the future are ignored.
+Storage content is updated whenever next valid transaction is logged to start with the most recent (current) moment and keep history of last 60 seconds.
+Transactions older than 60 seconds or with timestamp in the future are ignored. When transaction with the timestamp withing last 60 seconds is logged aggregated statistic for the second is updated with its amount.
+When statistic for the past 60 seconds is requested aggregated statistic is build using stored statistics for the seconds in the requested time range.
+
+O(c) complexity is achieved because:
+  - we only store 60 aggregated statistics at any time;
+  - to retrieve statistic we do 60 actions at most - retrieving statistic for a second;
+  - to log new transacton we do 60 actions at most - removing outdated statistics and placing new ones.
+
