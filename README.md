@@ -4,7 +4,7 @@
 
 Build and run using gradle (https://gradle.org):
   - clone the project to local folder
-  - init gradle by running '[ROOT_FOLDER]/gradle wrapper'
+  - init gradle by running `[ROOT_FOLDER]/gradle wrapper`
   - build with '[ROOT_FOLDER]/gradlew build';
   - find statistic.war file in '[ROOT_FOLDER]/build/libs' folder
   - deploy war file to servlet container, e.g. Tomcat
